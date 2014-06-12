@@ -1,0 +1,6 @@
+name: MinecraftRPUpdater
+main: ironcrystal.minecraftrpupdater.MinecraftRPUpdater
+version: 1.0
+commands:
+  update:
+    description: Updates the plugin
