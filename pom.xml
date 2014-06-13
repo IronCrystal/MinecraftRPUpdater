@@ -37,10 +37,6 @@
                         <configuration>
                             <minimizeJar>true</minimizeJar>
                             <relocations>
-                                <relocation>
-                                    <pattern>ironcrystal.minecraftrpupdater</pattern>
-                                    <shadedPattern>ironcrystal.minecraftrpupdater.commons.io</shadedPattern>
-                                </relocation>
                             </relocations>
                         </configuration>
                     </execution>
@@ -67,6 +63,7 @@
 			<artifactId>bukkit</artifactId>
 			<!-- Bukkit API Version, change if necessary -->
 			<version>1.7.9-R0.2</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>
