@@ -32,6 +32,7 @@ public class Updater implements Runnable {
 			e.printStackTrace();
 		}
 		try {
+			Bukkit.getServer().getPluginManager().disablePlugin(Bukkit.getServer().getPluginManager().getPlugin("MinecraftRP"));
 			Bukkit.getServer().getPluginManager().loadPlugin(file);
 		} catch (UnknownDependencyException e) {
 			e.printStackTrace();
