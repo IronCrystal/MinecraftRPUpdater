@@ -7,7 +7,7 @@ public class MinecraftRPUpdater extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
-		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Updater(), 0, 24000L);
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this, new Updater(), 24000L);
 		
 		/**
 		 * Commands

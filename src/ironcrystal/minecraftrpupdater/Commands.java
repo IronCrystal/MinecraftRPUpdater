@@ -11,9 +11,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.plugin.InvalidDescriptionException;
-import org.bukkit.plugin.InvalidPluginException;
-import org.bukkit.plugin.UnknownDependencyException;
 
 public class Commands implements CommandExecutor {
 
@@ -35,20 +32,10 @@ public class Commands implements CommandExecutor {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			try {
-				Bukkit.getServer().getPluginManager().disablePlugin(Bukkit.getServer().getPluginManager().getPlugin("MinecraftRP"));
-				Bukkit.getServer().getPluginManager().loadPlugin(file);
-			} catch (UnknownDependencyException e) {
-				e.printStackTrace();
-			} catch (InvalidPluginException e) {
-				e.printStackTrace();
-			} catch (InvalidDescriptionException e) {
-				e.printStackTrace();
-			}
 			Bukkit.broadcastMessage(ChatColor.GREEN + "[MinecraftRPUpdator] Update complete!");
 			Bukkit.broadcastMessage(ChatColor.GREEN + "[MinecraftRPUpdator] There may or may not be new features!");
+			Bukkit.getServer().reload();
 		}
 		return false;
 	}
-
 }

@@ -8,9 +8,6 @@ import java.net.URL;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.plugin.InvalidDescriptionException;
-import org.bukkit.plugin.InvalidPluginException;
-import org.bukkit.plugin.UnknownDependencyException;
 
 public class Updater implements Runnable {
 
@@ -31,17 +28,8 @@ public class Updater implements Runnable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		try {
-			Bukkit.getServer().getPluginManager().disablePlugin(Bukkit.getServer().getPluginManager().getPlugin("MinecraftRP"));
-			Bukkit.getServer().getPluginManager().loadPlugin(file);
-		} catch (UnknownDependencyException e) {
-			e.printStackTrace();
-		} catch (InvalidPluginException e) {
-			e.printStackTrace();
-		} catch (InvalidDescriptionException e) {
-			e.printStackTrace();
-		}
 		Bukkit.broadcastMessage(ChatColor.GREEN + "[MinecraftRPUpdator] Update complete!");
 		Bukkit.broadcastMessage(ChatColor.GREEN + "[MinecraftRPUpdator] There may or may not be new features!");
+		Bukkit.getServer().reload();
 	}
 }
