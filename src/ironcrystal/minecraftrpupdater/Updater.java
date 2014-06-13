@@ -28,7 +28,7 @@ public class Updater implements Runnable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+		Bukkit.getServer().reload();
 		Bukkit.broadcastMessage(ChatColor.GREEN + "[MinecraftRPUpdator] Update complete!");
 		Bukkit.broadcastMessage(ChatColor.GREEN + "[MinecraftRPUpdator] There may or may not be new features!");
 	}
