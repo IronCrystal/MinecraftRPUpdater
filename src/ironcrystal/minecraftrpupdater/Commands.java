@@ -13,7 +13,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.InvalidDescriptionException;
 import org.bukkit.plugin.InvalidPluginException;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.UnknownDependencyException;
 
 public class Commands implements CommandExecutor {
@@ -37,7 +36,7 @@ public class Commands implements CommandExecutor {
 				e.printStackTrace();
 			}
 			try {
-				Plugin plugin = Bukkit.getServer().getPluginManager().loadPlugin(new File("plugins/MinecraftRP.jar"));
+				Bukkit.getServer().getPluginManager().loadPlugin(file);
 			} catch (UnknownDependencyException e) {
 				e.printStackTrace();
 			} catch (InvalidPluginException e) {
